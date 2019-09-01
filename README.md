@@ -1,11 +1,11 @@
 # [Chrome ONLY] NUEIP automated punch-card application for lazy people :D
 
+### Precondition
+1. Download [chromedriver](https://chromedriver.chromium.org/) of yourOS.
+
+2. Put in /bin.
+
 ### Setup
-
-Pre:
-  1. Download [chromedriver](https://chromedriver.chromium.org/) of yourOS.
-  2. Put in /bin.
-
 1. Rename /bin/chromedriver_your_OS to chromedriver
 
 > chromedriver_mac64 -> chromedriver
