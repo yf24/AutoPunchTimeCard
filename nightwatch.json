@@ -1,0 +1,24 @@
+{
+    "webdriver": {
+        "start_process": true,
+        "server_path": "./bin/chromedriver",
+        "cli_args": [
+            "--verbose"
+        ],
+        "port": 9515
+    },
+    "src_folders": "punchTimeCard.js",
+    "test_settings" : {
+        "default" : {
+            "launch_url" : "https://cloud.nueip.com/login",
+            "desiredCapabilities" : {
+                "browserName" : "chrome"
+            },
+            "globals" : {
+                "CompanyID": "${ENV_COMPANY_ID}",
+                "EmployeeID": "${ENV_EMPLOYEE_ID}",
+                "Password": "${ENV_PASSWORD}"
+            }
+        }
+    }
+}
