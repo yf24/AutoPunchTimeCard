@@ -20,7 +20,7 @@
 ### Setup
 1. 重新命名 bin 資料夾內的 chromedriver 將其命名為: chromedriver (如果有其他後綴詞請刪除)
 
-> e.g. chromedriver_mac64 -> chromedriver
+> e.g. chromedriver_win32.exe -> chromedriver.exe
 
 2. Windows用戶請將.bat檔右鍵編輯，修改下列參數，並存檔
 (MacOS & Linux用戶請修改.sh檔，並注意最後執行的autopunchtimecard是哪個OS版本，並且參數不可換行)
