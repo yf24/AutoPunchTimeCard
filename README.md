@@ -2,12 +2,6 @@
 # Author: Ming Cai
 # Create: ~2019 Aug
 # Modify: 2020.1.28
-# Version: v1.1.0
-
-# release note:
-- [Add] Configurable: StartDate, EndDate
-- [Add] Configurable: Search keywords
-- [Modify] README add Chinese version
 
 
 ## 說明
