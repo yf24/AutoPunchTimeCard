@@ -82,7 +82,9 @@ function punchIn(browser) {
             .setValue('select[name="hour"]', "09")
             .setValue('input[name="remark"]', "Correction").pause(1000)
             .click('button[id="ModalSave"]').pause(300)
-            .click('button[id="ModalClose"]').pause(300)
+            .element('css selector', 'button[id="ModalClose"]', function(result) {
+                if(result.status != -1) browser.click('button[id="ModalClose"]').pause(300)
+            })
             .pause(1000)
         })
     })
