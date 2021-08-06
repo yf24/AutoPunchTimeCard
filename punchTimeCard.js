@@ -8,6 +8,7 @@ module.exports = {
         let envVariable = browser.globals
         browser
         .waitForElementVisible('body')
+        .click('xpath', "//div[contains(@class,'lang-dropdown')]")
         .click('a[id="en"]')
         .setValue('input[id="dept_input"]', envVariable.CompanyID)
         .setValue('input[id="username_input"]', envVariable.EmployeeID)
@@ -53,17 +54,6 @@ module.exports = {
     'Close Browser': function (browser) { browser.end() }
   };
 
-// function punchLastMonth(browser) {
-//     punchInOut(browser, "filiter_before_month")
-// }
-// function punchThisMonth(browser) {
-//     punchInOut(browser, "filiter_month")
-// }
-// function punchInOut(browser, monthButtonID) {
-//     browser.click(`button[id="${monthButtonID}"]`).pause(1200)
-//     punchIn(browser)
-//     punchOut(browser)
-// }
 function punchInOut(browser) {
     punchIn(browser)
     punchOut(browser)
@@ -75,17 +65,19 @@ function punchIn(browser) {
         result.value.forEach(function(element){
             let elementID = element.ELEMENT
             browser
-            .moveTo(elementID).pause(500)
+            .moveTo(elementID).pause(1000)
             .elementIdClick(elementID).pause(1000)
-            .waitForElementPresent('div[id="ModalBody"]')
-            .click('xpath', "//label[@for='clockin']")
-            .setValue('select[name="hour"]', "09")
-            .setValue('input[name="remark"]', "Correction").pause(1000)
-            .click('button[id="ModalSave"]').pause(300)
-            .element('css selector', 'button[id="ModalClose"]', function(result) {
-                if(result.status != -1) browser.click('button[id="ModalClose"]').pause(300)
+            .waitForElementPresent("h4[class='modal-title']", 2000)
+            .click('xpath', "//label[@for='clockinSection']")
+            // .setValue('select[name="hour"]', "09")
+            .setValue('xpath', '//*[@id="correctionTime"]//select[@name="hour"]', '09')
+            // .setValue('input[name="remark"]', "Correction").pause(1000)
+            .setValue('xpath', '//*[@id="save_form"]/div/div[4]/div/input', 'Correction').pause(1000)
+            .click('xpath', '//button[contains(text(),"Confirm")]').pause(1300)
+            .element('css selector', 'button[id="close"]', function(result) {
+                if(result.status != -1) browser.click('button[id="close"]').pause(1000)
             })
-            .pause(1000)
+            // .pause(1000)
         })
     })
 }
@@ -97,13 +89,15 @@ function punchOut(browser) {
             let elementID = element.ELEMENT
             browser
             .elementIdClick(elementID).pause(1000)
-            .waitForElementPresent('div[id="ModalBody"]')
-            .click('xpath', "//label[@for='clockout']")
-            .setValue('select[name="hour"]', "18")
-            .setValue('input[name="remark"]', "Correction").pause(1000)
-            .click('button[id="ModalSave"]').pause(300)
-            // .click('button[id="ModalClose"]').pause(300)
-            .pause(1000)
+            .waitForElementPresent("h4[class='modal-title']", 2000)
+            .click('xpath', "//label[@for='clockoutSection']")
+            // .setValue('select[name="hour"]', "18")
+            .setValue('xpath', '//*[@id="correctionTime"]//select[@name="hour"]', '18')
+            // .setValue('input[name="remark"]', "Correction").pause(1000)
+            .setValue('xpath', '//*[@id="save_form"]/div/div[4]/div/input', 'Correction').pause(1000)
+            .click('xpath', '//button[contains(text(),"Confirm")]').pause(1300)
+            // .click('button[id="close"]').pause(300)
+            // .pause(1000)
         })
     })
 }

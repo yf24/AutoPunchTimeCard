@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "auto punch time card.",
   "main": "index.js",
-  "bin":"index.js",
+  "bin": "index.js",
   "scripts": {
     "test": "node index.js"
   },
@@ -13,11 +13,13 @@
   ],
   "pkg": {
     "scripts": "punchTimeCard.js",
-    "assets": ["nightwatch.json"]
+    "assets": [
+      "nightwatch.json"
+    ]
   },
   "author": "ming.cai@nextdrive.io",
   "license": "ISC",
   "dependencies": {
-    "nightwatch": "^1.1.13"
+    "nightwatch": "^1.6.3"
   }
 }
