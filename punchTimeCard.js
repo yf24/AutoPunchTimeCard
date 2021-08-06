@@ -33,7 +33,7 @@ const PunchType = {
     await page.goto("https://cloud.nueip.com/attendance_record");
     const currentYear = new Date().getFullYear()
     await page.evaluate(() => document.getElementById("date_start").value = "");
-    await page.fill("id=date_start", `${currentYear}-01-01`);
+    await page.fill("id=date_start", `${currentYear-1}-01-01`);
     await page.evaluate(() => document.getElementById("date_end").value = "");
     await page.fill("id=date_end", `${currentYear}-12-31`);
     await page.click("id=filter");
