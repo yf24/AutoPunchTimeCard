@@ -31,7 +31,7 @@ e.g. ./autopunchtimecard-macos --id=your_Employee_ID --password=your_password --
 
 2. Drink a coffee or go to bathroom.
 
-3. Process will be done when showing message "Punch Finish" in terminal.
+3. Process will be done when showing message "QUEST COMPLETE" in terminal.
 
 
 ------
@@ -52,7 +52,7 @@ e.g. ./autopunchtimecard-macos --id=your_Employee_ID --password=your_password --
 
 2. 去上個廁所或喝杯咖啡吧！
 
-3. 若有在小黑窗看到 Punch finished. 則表示完成 （這邊 Windows 有可能會看不到任何訊息就被關掉小黑窗)
+3. 若有在小黑窗看到 QUEST COMPLETE. 則表示完成 （這邊 Windows 有可能會看不到任何訊息就被關掉小黑窗)
 
 
 ------
