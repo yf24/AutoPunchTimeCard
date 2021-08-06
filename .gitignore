@@ -1,4 +1,6 @@
+dev/
 bin/
+Release/
 release/bin/
 autopunchtimecard-*
 
