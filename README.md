@@ -1,5 +1,5 @@
 # [Chrome ONLY] NUEIP automated punch-card application for lazy people :D
-# Author: Ming Cai
+# Author: yf24
 # Create: ~2019 Aug
 # Modify: 2020.1.28
 
