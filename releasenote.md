@@ -1,3 +1,7 @@
+# v2.0.0:
+- [New] using new framework: Playwright instead of nightwatch, it's a new powerful tool that makes more efficency!
+- [Enhance] remove unnecessary element query
+- [Delete] decrease controllable argument, make it more simply
 # v1.1.5:
 - [Enhance] remove unnecessary sleep, and make it more stable.
 # v1.1.4:

@@ -1,25 +1,20 @@
 {
   "name": "autopunchtimecard",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "auto punch time card.",
-  "main": "index.js",
-  "bin": "index.js",
-  "scripts": {
-    "test": "node index.js"
-  },
-  "keywords": [
-    "chromedriver",
-    "automated"
-  ],
+  "main": "punchTimeCard.js",
+  "bin": "punchTimeCard.js",
   "pkg": {
-    "scripts": "punchTimeCard.js",
+    "scripts": [],
     "assets": [
-      "nightwatch.json"
+      "./node_modules/playwright/browsers.json"
     ]
   },
   "author": "ming.cai@nextdrive.io",
   "license": "ISC",
   "dependencies": {
-    "nightwatch": "^1.6.3"
+    "minimist": "^1.2.5",
+    "ora": "^5.4.1",
+    "playwright": "^1.13.1"
   }
 }
