@@ -10,7 +10,7 @@
 
 ------
 
-## Manual
+## Manual (Please make sure Chrome was installed in your PC!!!!)
 
 ### Setup
 1. Open the shell/batch script, and modify configs, then save it.
@@ -36,7 +36,7 @@ e.g. ./autopunchtimecard-macos --id=your_Employee_ID --password=your_password --
 
 ------
 
-## 說明
+## 說明 (請先安裝 Chrome 在你的電腦!!!)
 
 ### Setup
 1. Windows用戶請將.bat檔右鍵編輯，修改下列參數，並存檔
