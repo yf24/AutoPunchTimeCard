@@ -13,6 +13,7 @@ const PunchType = {
 (async () => {
     var spinner = ora('Processing......').start();
     const browser = await chromium.launch({
+        channel: "chrome",
         headless: !argv.observe // if dev -> set false
     });
     const context = await browser.newContext();
