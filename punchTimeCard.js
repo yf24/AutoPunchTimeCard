@@ -32,11 +32,13 @@ const PunchType = {
     // Set seaching time
     spinner = ora("Peparing to punch card......").start();
     await page.goto("https://cloud.nueip.com/attendance_record");
-    const currentYear = new Date().getFullYear()
+    const currentYear = new Date().getFullYear();
+    const lastMonth = new Date().getMonth(); // 0-based
+    const lastMonthDay = new Date(currentYear, lastMonth, 0);
     await page.evaluate(() => document.getElementById("date_start").value = "");
     await page.fill("id=date_start", `${currentYear-1}-01-01`);
     await page.evaluate(() => document.getElementById("date_end").value = "");
-    await page.fill("id=date_end", `${currentYear}-12-31`);
+    await page.fill("id=date_end", `${currentYear}-${lastMonth}-${lastMonthDay}`);
     await page.click("id=filter");
     // Prepare results
     await page.selectOption("select[name='table_content_length']", "100");
