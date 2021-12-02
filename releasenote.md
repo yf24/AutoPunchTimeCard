@@ -1,3 +1,11 @@
+# v2.3.0:
+- [Enhance] Avoid to punch in/out at leave day.
+# v2.2.0:
+- [Modify] Seach range: lastYear-01-01 to currentYear-lastMonth-maxDay
+# v2.1.0:
+- [Fix] decoupling with fixed version of snapshot Chromium
+# v2.0.1:
+- [Fix] searching start year should -1, or that can not punch Dec. in last year
 # v2.0.0:
 - [New] using new framework: Playwright instead of nightwatch, it's a new powerful tool that makes more efficency!
 - [Enhance] remove unnecessary element query
