@@ -43,6 +43,7 @@ const PunchType = {
     // Prepare results
     await page.selectOption("select[name='table_content_length']", "100");
     await page.fill("[placeholder='Search by keywords']", "Absent");
+    await page.click("text=Attendance Status"); // click to set acc order
     spinner.succeed("Ready to work");
     // Punch in/out
     spinner = ora("Starting punch in......").start();
@@ -60,6 +61,17 @@ const PunchType = {
     spinner.succeed("QUEST COMPLETE");
 })();
 
+// MARK: - Functions
+
+/**
+ * @param {Page} page The page object
+ */
+async function getIsLeave(page) {
+    const cuurTr = await page.$(`//tr[contains(@class, 'odd')][1]`)
+    const cuurTrClass = await page.evaluate(el => el.getAttribute('class'), cuurTr);
+    return `${cuurTrClass}`.includes('bg_color')
+}
+
 /**
  * @param {Page} page The page object
  * @param {PunchType} punchType The type of punch
@@ -70,7 +82,12 @@ async function punchTimeCard(page, punchType, callback) {
   
     var times = 0
     var add = await page.$('#add')
-    while(add) {
+    while (add) {
+        if (isIn) {
+            const isLeave = await getIsLeave(page);
+            if (isLeave) { break; }
+        }
+
         ++times;
         try {
             await add.click()
@@ -80,9 +97,9 @@ async function punchTimeCard(page, punchType, callback) {
             await page.click("text=Confirm");
             if (isIn) { // prevent to click stun
                 const close = await page.$("id=close");
-                if(close) { await close.click(); }
+                if (close) { await close.click(); }
             }
-        } catch(e) {
+        } catch (e) {
             add = await page.$('#add')
         }
     }
